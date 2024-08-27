@@ -11,9 +11,11 @@
 puts "Destruiu carro"
 Car.destroy_all
 puts "Destruiu tudo"
-puts "Destruindo user"
+
+puts'destruindo user'
 User.destroy_all
-puts "Destruiu tudo"
+puts'criando user'
+
 
 User.create!(email: '_user_@user.com', password: '123456', first_name: 'Julinho', last_name: 'Balinha')
 User.create!(email: 'user_@user.com', password: '123456', first_name: 'Julio', last_name: 'Balas')
@@ -30,7 +32,7 @@ puts "Criou todos usuarios"
 
 20.times do
   puts "Criando carros"
-  Car.create!(brand: 'ferrari', model: 'spider', km: 100, year: rand(1990..2010), user_id: rand(63..72))
+  Car.create!(brand: 'ferrari', model: 'spider', km: 100, year: rand(1990..2010), user: User.all.sample)
   puts "Criou carros"
 end
 

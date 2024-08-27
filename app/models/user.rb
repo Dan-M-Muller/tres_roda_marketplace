@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :deals, dependent: :destroy
-  has_many :cars
+  has_many :cars, dependent: :destroy
   has_many :cars, through: :deals
 
   # Include default devise modules. Others available are:

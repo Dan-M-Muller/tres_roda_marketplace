@@ -1,0 +1,10 @@
+<%= simple_form_for car do |f| %>
+  <%= f.input :brand, placeholder: "Fabricante ou marca do carro" %>
+  <%= f.input :model, placeholder: "Modelo do Carro" %>
+  <%= f.input :year, placeholder: "Ano de Fabricação" %>
+  <%= f.input :km, placeholder: "Km's Rodados" %>
+  <%= f.input :photo, as: :file, placeholder: "Uma foto de destaque do carro" %>
+  <%= f.submit %>
+<% end %>
+<hr>
+

@@ -1,0 +1,21 @@
+<div class="card pt-2">
+  <% if @car.photo.attached? %>
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
+  <% else %>
+    <%= image_tag "car_placeholder.jpg" %>
+  <% end %>
+  <hr>
+  <div class="card-body">
+    <h3 class="card-title text-center"><%= @car.model %>, <%= @car.brand %></h3>
+    <p class="card-text">User: <%= @car.user.first_name %> <%= @car.user.last_name %></p>
+    <p class="card-text">Kilometragem: <%= @car.km %></p>
+    <p class="card-text">Ano: <%= @car.year %></p>
+    <div class="card-footer text-center">
+      <%= link_to "Compre este carro", "#", class: "btn btn-gradient" %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="px-5 pb-5">
+  <%= link_to "Volte", cars_path, class: "btn btn-dark" %>
+</div>

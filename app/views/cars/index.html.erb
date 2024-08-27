@@ -1,6 +1,7 @@
 <h1>Oi!</h1>
   <% @cars.each do |car| %>
-    <%= car.model %>
-    <%= car.brand %>
-    <%= car.km %>
+    <p>This is your model: <%= car.model %></p>
+    <p>This is your brand: <%= car.brand %></p>
+    <p>This is your km: <%= car.km %></p>
+    <p>This is your year: <%= car.year %></p>
   <% end %>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :deals, only: %i[new create]
   end
 
-  resources :deals, only: %i[index show] do
+  resources :deals, only: %i[index show edit update] do
     get "my", on: :collection
   end
 

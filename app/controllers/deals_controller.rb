@@ -28,6 +28,11 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
   end
 
+  def update
+    @deal = Deal.find(params[:id])
+    @deal.update(accepted?: true)
+  end
+
   private
 
   def deal_params

@@ -1,0 +1,21 @@
+<% dealing_car = @deal.car %>
+<h1>Minha oferta para <%= dealing_car.model %></h1>
+
+<div class="card">
+  <% if @deal.car.photo.attached? %>
+    <%= cl_image_tag dealing_car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
+  <% else %>
+    <%= image_tag "car_placeholder.jpg" %>
+  <% end %>
+  <div class="card-body">
+    <div class="card-footer text-center">
+      <% if @deal.accepted? %>
+        <%= @deal.seller.first_name %> Aceitou sua proposta! Parabéns!
+        Entre em contato por <%= @deal.seller.email %>
+        <% else %>
+        Sua oferta ainda não foi aceita, espere por <%= @deal.seller.first_name %>
+      <% end %>
+    </div>
+    <%= link_to "Volte", my_deals_path, class: "btn btn-dark" %>
+  </div>
+</div>

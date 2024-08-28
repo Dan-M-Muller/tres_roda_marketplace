@@ -7,11 +7,12 @@
   <hr>
   <div class="card-body">
     <h3 class="card-title text-center"><%= @car.model %>, <%= @car.brand %></h3>
-    <p class="card-text">User: <%= @car.user.first_name %> <%= @car.user.last_name %></p>
+    <h5 class="card-text">Preço pedido: <%= @car.initial_price %></h5>
+    <p class="card-text">Vendedor: <%= @car.user.first_name %> <%= @car.user.last_name %></p>
     <p class="card-text">Kilometragem: <%= @car.km %></p>
     <p class="card-text">Ano: <%= @car.year %></p>
     <div class="card-footer text-center">
-      <%= link_to "Compre este carro", "#", class: "btn btn-gradient" %>
+      <%= link_to "Compre este carro", new_car_deal_path(@car), class: "btn btn-gradient" %>
     </div>
   </div>
 </div>

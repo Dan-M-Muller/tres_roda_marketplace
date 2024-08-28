@@ -1,0 +1,28 @@
+<h1 class="bg-dark bg-gradient text-white text-center"> Todas as suas ofertas criadas</h1>
+<div class="container">
+  <% @buyer_deals.each do |b| %>
+    <div class="card mb-3" style="max-width: 1200px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <% if b.car.photo.attached? %>
+            <%= cl_image_tag b.car.photo.key, crop: :fill, class: "card-banner card-img-top" %>
+          <% else %>
+            <%= image_tag "car_placeholder.jpg" %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">
+              <% if b.accepted? %>
+                <%= b.seller.first_name %> Aceitou sua proposta! Parabéns!
+              <% else %>
+                Sua oferta ainda não foi aceita, espere por <%= b.seller.first_name %>
+              <% end %>
+            </h3>
+            <%= link_to "Detalhes", deal_path(b), class: "btn btn-dark" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

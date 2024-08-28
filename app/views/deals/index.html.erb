@@ -1,0 +1,29 @@
+<h1 class="bg-dark bg-gradient text-white text-center"> Todas as suas ofertas para avaliação</h1>
+<div class="container">
+  <% @seller_deals.each do |s| %>
+    <div class="card mb-3" style="max-width: 1200px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <% if s.car.photo.attached? %>
+            <%= cl_image_tag s.car.photo.key, crop: :fill, class: "card-banner card-img-top" %>
+          <% else %>
+            <%= image_tag "car_placeholder.jpg" %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">Oferta: <%= s.price %>$</h3>
+              <h5 class="card-text">Preço inicial <%= s.car.initial_price %>$</h5>
+              <% if s.accepted? %>
+                <p class="card-text"> Voce já aceitou essa oferta de <%= s.buyer.first_name %></p>
+              <% else %>
+                <%= render "edit_form", deal: s %>
+              <% end %>
+            </div>
+            <%= link_to "Detalhes", deal_path(s), class: "btn btn-dark mt-5" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>

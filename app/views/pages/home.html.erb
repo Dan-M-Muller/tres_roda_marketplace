@@ -26,6 +26,7 @@
               <div class="card-body">
                 <h5 class="card-title">Fabricante: <%= c.brand %></h5>
                 <p class="card-text">Km rodados: <%= c.km %></p>
+                <%= link_to "Veja mais informações", car_path(c), class: "btn btn-flat" %>
               </div>
             </div>
           </li>

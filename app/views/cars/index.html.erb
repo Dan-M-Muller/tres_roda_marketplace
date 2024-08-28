@@ -1,7 +1,24 @@
-<h1>Oi!</h1>
+<h1 class="bg-dark bg-gradient text-white">Todas as ofertas</h1>
+<div class="container">
   <% @cars.each do |car| %>
-    <p>This is your model: <%= car.model %></p>
-    <p>This is your brand: <%= car.brand %></p>
-    <p>This is your km: <%= car.km %></p>
-    <p>This is your year: <%= car.year %></p>
+    <div class="card mb-3" style="max-width: 1200px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <% if car.photo.attached? %>
+            <%= cl_image_tag car.photo.key, crop: :fill, class: "card-banner card-img-top" %>
+          <% else %>
+            <%= image_tag "car_placeholder.jpg" %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">Modelo: <%= car.model %>, Fabricante: <%= car.brand %></h3>
+            <h5 class="card-text"><small class="text-muted">Ano: <%= car.year %></small></h5>
+            <h5 class="card-text"><small class="text-muted">Kilometragem: <%= car.km %></small></h5>
+          </div>
+        </div>
+      </div>
+      <%= link_to "Mais Detalhes", car_path(car), class: "btn btn-flat" %>
+    </div>
   <% end %>
+</div>

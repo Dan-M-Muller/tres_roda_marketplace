@@ -1,4 +1,4 @@
-<h1 class="bg-dark bg-gradient text-white text-center"> Todas as suas ofertas pendentes para avaliação</h1>
+<h1 class="bg-dark bg-gradient text-white text-center"> Todas as suas ofertas para avaliação</h1>
 <div class="container">
   <% @seller_deals.each do |s| %>
     <div class="card mb-3" style="max-width: 1200px;">
@@ -14,8 +14,8 @@
           <div class="card-body">
             <div>
               <h3 class="card-title">Oferta: <%= s.price %>$</h3>
-              <% if s.accepted %>
-                <p class="card-text"> Voce já aceitou essa oferta</p>
+              <% if s.accepted? %>
+                <p class="card-text"> Voce já aceitou essa oferta de <%= s.buyer.first_name %></p>
               <% else %>
                 <%= render "edit_form", deal: s %>
               <% end %>

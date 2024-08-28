@@ -1,10 +1,55 @@
-<p></p>
-<div class="container">
-  <h2>Olá, <%= @user.first_name %>!</h2>
-  <p>Este é seu email atual: <%= @user.email %>
-  <%= link_to "Edite seu email", "#", class: "btn btn-secondary" %></p>
-  <p>Nome completo : <%= @user.first_name %> <%= @user.last_name %>
-  <%= link_to "Mude seu nome", "#", class: "btn btn-secondary" %></p>
-  <p><%= link_to "Atualize sua senha", "#", class: "btn btn-secondary" %></p>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-Cars" type="button" role="tab" aria-controls="nav-Cars" aria-selected="true">My Cars</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <%# tab de meus carros %>
+  <div class="tab-pane fade show active" id="nav-Cars" role="tabpanel" aria-labelledby="nav-Cars-tab">
+    <div class="container m-5">
+      <div class="card">
+        <% @cars.each do |car| %>
+          <div class="card mb-3" style="max-width: 1200px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <% if car.photo.attached? %>
+                  <%= cl_image_tag car.photo.key, crop: :fill, class: "card-banner card-img-top" %>
+                <% else %>
+                  <%= image_tag "car_placeholder.jpg" %>
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Modelo: <%= car.model %>, Fabricante: <%= car.brand %></h3>
+                  <p class="card-text"><small class="text-muted">Ano: <%= car.year %></small></p>
+                  <p class="card-text"><small class="text-muted">Kilometragem: <%= car.km %></small></p>
+                  <h5 class="card-text">Preço pedido: <%= car.initial_price %>$</h5>
+                  <%= link_to "Editar",  edit_car_path(car), class: "btn btn-ghost" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+    <%# tab de configs %>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="container m-5">
+      <div class="container mb-4">
+        <h2 class="card-title">Olá, <%= @user.first_name %>!</h2>
+        <br>
+        <div class="container mb-4">
+          <p class="card-text">Email atual: <%= @user.email %></p>
+          <%= link_to "Edite seu email", "#", class: "btn btn-secondary" %>
+        </div>
+        <div class="container mb-4">
+          <p>Nome completo : <%= @user.first_name %> <%= @user.last_name %></p>
+          <%= link_to "Mude seu nome", "#", class: "btn btn-secondary" %>
+        </div>
+        <p><%= link_to "Atualize sua senha", "#", class: "btn btn-secondary" %></p>
+      </div>
+    </div>
+  </div>
 </div>
-<hr>

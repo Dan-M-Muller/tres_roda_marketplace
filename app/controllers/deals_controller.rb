@@ -31,6 +31,8 @@ class DealsController < ApplicationController
   def update
     @deal = Deal.find(params[:id])
     @deal.update(accepted?: true)
+
+    redirect_to deals_path
   end
 
   private

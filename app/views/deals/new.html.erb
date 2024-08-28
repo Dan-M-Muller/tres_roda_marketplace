@@ -1,0 +1,16 @@
+<h1 class="bg-dark bg-gradient text-white text-center"> Confirmação de preço para <%= @car.brand %> <%= @car.model %>, <%= @car.year %></h1>
+<h3> Converse com <%= @car.user.first_name %>, para chegarem a um acordo</h3>
+<%= link_to "Volte", car_path(@car), class: "btn btn-dark" %>
+<hr>
+<div class="container m-3">
+  <div class="card">
+    <div class="card-header text-center">
+      current_user.first_name
+    </div>
+    <div class="card-body">
+      <h5 class="card-title text-center">Oferta: #TO-DO#</h5>
+      <p class="card-text">Uma frase para conversar com o proprietário do carro</p>
+      <%= link_to "Enviar oferta", car_path(@car), class: "btn btn-flat" %>
+    </div>
+  </div>
+</div>

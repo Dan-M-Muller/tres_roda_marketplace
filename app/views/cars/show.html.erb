@@ -11,7 +11,7 @@
     <p class="card-text">Kilometragem: <%= @car.km %></p>
     <p class="card-text">Ano: <%= @car.year %></p>
     <div class="card-footer text-center">
-      <%= link_to "Compre este carro", "#", class: "btn btn-gradient" %>
+      <%= link_to "Compre este carro", new_car_deal_path(@car), class: "btn btn-gradient" %>
     </div>
   </div>
 </div>

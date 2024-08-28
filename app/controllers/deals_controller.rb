@@ -1,7 +1,11 @@
 class DealsController < ApplicationController
 
   def index
-    @seller = Deal.by_seller(current_user)
+    @seller_deals = Deal.by_seller(current_user)
+  end
+
+  def my
+    @buyer_deals = current_user.deals
   end
   def new
     @car = Car.find(params[:car_id])
@@ -11,7 +15,17 @@ class DealsController < ApplicationController
   end
 
   def create
+    @buyer = current_user
+    @car = Car.find(params[:car_id])
     @deal = Deal.new(deal_params)
+    @deal.user = @buyer
+    @deal.car = @car
+    @deal.save
+    redirect_to deal_path(@deal)
+  end
+
+  def show
+    @deal = Deal.find(params[:id])
   end
 
   private

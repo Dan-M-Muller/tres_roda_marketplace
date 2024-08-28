@@ -13,4 +13,6 @@ class Deal < ApplicationRecord
   def self.by_seller(user)
     Deal.joins(car: :user).where(car: {user: user})
   end
+
+  validates :price, presence: true
 end

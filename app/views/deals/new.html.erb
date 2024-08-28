@@ -5,12 +5,10 @@
 <div class="container m-3">
   <div class="card">
     <div class="card-header text-center">
-      current_user.first_name
+      <%= @buyer.first_name %> <%= @buyer.last_name %>
     </div>
     <div class="card-body">
-      <h5 class="card-title text-center">Oferta: #TO-DO#</h5>
-      <p class="card-text">Uma frase para conversar com o proprietário do carro</p>
-      <%= link_to "Enviar oferta", car_path(@car), class: "btn btn-flat" %>
+      <%= render "buyer_form", deal: @deal %>
     </div>
   </div>
 </div>

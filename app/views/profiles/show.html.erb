@@ -1,0 +1,9 @@
+<p></p>
+<div class="container">
+  <h2>Olá, <%= @user.first_name %>!</h2>
+  <p>Este é seu email atual: <%= @user.email %>
+  <%= link_to "Edite seu email", "#", class: "btn btn-secondary" %></p>
+  <p>Nome completo : <%= @user.first_name %> <%= @user.last_name %>
+  <%= link_to "Mude seu nome", "#", class: "btn btn-secondary" %></p>
+  <p><%= link_to "Atualize sua senha", "#", class: "btn btn-secondary" %></p>
+</div>

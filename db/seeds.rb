@@ -1,6 +1,7 @@
 require 'faker'
+require "open-uri"
 
-puts "Destruiu carro"
+puts "Destruiu carros"
 Car.destroy_all
 puts "Destruiu tudo"
 
@@ -22,13 +23,21 @@ User.create!(email: "albertin_tilim@emailreal.confia", password: '123456', first
 
 puts "Criou todos usuarios"
 
-car_maker = Faker::Vehicle.make
-car_model = Faker::Vehicle.model
+car_photos = [File.open("db/seed_cars/ambu.jpg"), File.open("db/seed_cars/belair_2.jpg"), File.open("db/seed_cars/mx5.jpg"),
+File.open("db/seed_cars/city-x.jpg"), File.open("db/seed_cars/equator.jpg"), File.open("db/seed_cars/ferrari.jpg"),
+File.open("db/seed_cars/fusca.jpg"), File.open("db/seed_cars/hello.jpg"), File.open("db/seed_cars/kart.jpg"),
+File.open("db/seed_cars/komb.jpg"), File.open("db/seed_cars/kuro.jpg"), File.open("db/seed_cars/limu.jpg"),
+File.open("db/seed_cars/lotus.jpg"), File.open("db/seed_cars/porche.jpg"), File.open("db/seed_cars/taxi.jpg")
+]
+indx = 0
 
-20.times do
-  puts "Criando carros"
-  Car.create!(brand: car_maker, model: car_model, km: rand(0..90000), year: rand(1960..2010), user: User.all.sample)
-  puts "Criou carros"
+15.times do
+  puts "Criando carro"
+  car_maker = Faker::Vehicle.make
+  car_model = Faker::Vehicle.model
+  Car.create!(brand: car_maker, model: car_model, km: rand(0..90000), year: rand(1960..2010), user: User.all.sample, photo: car_photos[indx])
+  indx +=1
+  puts "Criou carro #{indx}"
 end
 
 puts "Created #{User.count} users and #{Car.count} cars."

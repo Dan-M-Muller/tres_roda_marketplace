@@ -26,7 +26,7 @@ class CarsController < ApplicationController
   end
 
   def update
-    
+    raise
 
   end
 

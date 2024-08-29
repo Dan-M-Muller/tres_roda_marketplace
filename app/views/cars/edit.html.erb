@@ -1,9 +1,0 @@
-<div class="container">
-
-  <h1>Informações do seu <%= @car.model %> <%= @car.brand %>, <%= current_user.first_name %></h1>
-  <%= link_to "Volte para seu perfil", profiles_path, class: "btn btn-dark mb-3" %>
-  <br>
-  <%= render "form", car: @car %>
-  <br>
-
-</div>

@@ -1,12 +1,12 @@
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-Cars" type="button" role="tab" aria-controls="nav-Cars" aria-selected="true">My Cars</button>
+    <button class="nav-link active" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-cars" type="button" role="tab" aria-controls="nav-cars" aria-selected="true">My Cars</button>
     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
     <%# tab de meus carros %>
-  <div class="tab-pane fade show active" id="nav-Cars" role="tabpanel" aria-labelledby="nav-Cars-tab">
+  <div class="tab-pane fade show active" id="nav-cars" role="tabpanel" aria-labelledby="nav-cars-tab">
     <div class="container m-5">
       <div class="card">
         <% @cars.each do |car| %>
@@ -20,12 +20,18 @@
                 <% end %>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body" data-controller="form">
                   <h3 class="card-title">Modelo: <%= car.model %>, Fabricante: <%= car.brand %></h3>
                   <p class="card-text"><small class="text-muted">Ano: <%= car.year %></small></p>
                   <p class="card-text"><small class="text-muted">Kilometragem: <%= car.km %></small></p>
                   <h5 class="card-text">Preço pedido: <%= car.initial_price %>,00$</h5>
-                  <%= link_to "Editar",  edit_car_path(car), class: "btn btn-ghost" %>
+                  <%# <%= link_to "Editar",  edit_car_path(car), class: "btn btn-ghost" %>
+                  <button type="button" class="btn btn-ghost" data-action="click->form#toggle">
+                    Editar
+                  </button>
+                  <div class="card mt-4 d-none" data-form-target="carForm">
+                    <%= render "car_edit_form", car: car %>
+                  </div>
                 </div>
               </div>
             </div>

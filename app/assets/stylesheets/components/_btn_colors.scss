@@ -1,6 +1,6 @@
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: #985F54;
+  border: 1px solid #985F54;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -13,9 +13,9 @@
 }
 
 .btn-ghost-fill {
-  color: #e5e5e5;
-  border: 1px solid #4A4A4A;
-  background: #4A4A4A;
+  color: #F1F7ED;
+  border: 1px solid #985F54;
+  background: #985F54;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -23,34 +23,50 @@
   transition: opacity 0.3s ease;
 }
 
-.btn-ghost:hover {
+.btn-ghost-fill:hover {
   opacity: 1;
 }
 
 .btn-flat {
-  color: white;
+  color: #F1F7ED;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #670BFF;
+  background: #15616D;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #4D04C4;
-  color: white;
+  background: #0f4b54;
+  color: #F1F7ED;
 }
 
 .btn-gradient {
-  color: white;
+  color: #F1F7ED;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(#16fb8c, #048b4a);
+  background: linear-gradient(#8D4C41, #82392E);
   transition: background 0.3s ease;
-  border: 1px solid #048b4a;
+  border: 1px solid #82392E;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#048b4a, #006434);
-  color: white;
+  background: linear-gradient(#814338, #682c23);
+  color: #F1F7ED;
+}
+
+.btn-index {
+  color: #F1F7ED;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 4px;
+  background: linear-gradient(#8D4C41, #82392E);
+  transition: background 0.3s ease;
+}
+
+.btn-index:hover {
+  background: linear-gradient(#814338, #682c23);
+  color: #F1F7ED;
 }

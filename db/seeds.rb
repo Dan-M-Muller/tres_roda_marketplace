@@ -1,14 +1,19 @@
 require 'faker'
 require "open-uri"
 
-puts "Destruiu carros"
+puts "destruindo deals"
+Deal.destroy_all
+puts "destruiu deals"
+
+puts "Destruindo carros"
 Car.destroy_all
-puts "Destruiu tudo"
+puts "Destruiu carro"
+
 
 puts'destruindo user'
 User.destroy_all
-puts'criando user'
 
+puts'criando user'
 
 User.create!(email: 'julin@realuser.com', password: '123456', first_name: 'Julinho', last_name: 'Balinha')
 User.create!(email: 'juju@user.com', password: '123456', first_name: 'Julio', last_name: 'Balas')
@@ -31,11 +36,12 @@ File.open("db/seed_cars/lotus.jpg"), File.open("db/seed_cars/porche.jpg"), File.
 ]
 indx = 0
 
+puts "Criando carros"
 15.times do
-  puts "Criando carro"
   car_maker = Faker::Vehicle.make
   car_model = Faker::Vehicle.model
-  Car.create!(brand: car_maker, model: car_model, km: rand(0..90000), year: rand(1960..2010), user: User.all.sample, photo: car_photos[indx])
+  Car.create!(brand: car_maker, model: car_model, km: rand(0..90000), year: rand(1960..2010),
+            user: User.all.sample, photo: car_photos[indx], initial_price: rand(5350..38780))
   indx +=1
   puts "Criou carro #{indx}"
 end

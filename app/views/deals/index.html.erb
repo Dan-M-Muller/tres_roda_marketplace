@@ -13,10 +13,10 @@
         <div class="col-md-8">
           <div class="card-body">
             <div>
-              <h3 class="card-title">Oferta: <%= s.price %>$</h3>
-              <h5 class="card-text">Preço inicial <%= s.car.initial_price %>$</h5>
+              <h3 class="card-title">Oferta: <%= s.price %>,00$</h3>
+              <h5 class="card-text">Preço inicial <%= s.car.initial_price %>,00$</h5>
               <% if s.accepted? %>
-                <p class="card-text"> Voce já aceitou essa oferta de <%= s.buyer.first_name %></p>
+                <p class="card-text bg-success text-white"> Voce já aceitou essa oferta de <%= s.buyer.first_name %></p>
               <% else %>
                 <%= render "edit_form", deal: s %>
               <% end %>

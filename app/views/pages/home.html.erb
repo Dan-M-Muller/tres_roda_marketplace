@@ -8,7 +8,7 @@
 <hr>
     <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
-    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: root_path, method: :get, class: "d-flex src" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -32,7 +32,7 @@
               <% else %>
                 <%= image_tag "car_placeholder.jpg" %>
               <% end %>
-              <div class="card-header text-center">
+              <div class="card-hd text-center">
                 Modelo: <%=c.model%> // Ano: <%= c.year %>
               </div>
               <div class="card-body">

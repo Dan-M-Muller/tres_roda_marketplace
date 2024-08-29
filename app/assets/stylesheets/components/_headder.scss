@@ -1,0 +1,8 @@
+.hd-car-dark {
+  color: $white;
+  background: linear-gradient($blue, $dark);
+  font-weight: bold;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+}

@@ -13,8 +13,8 @@
 }
 
 .btn-ghost-fill {
-  color: #F1F7ED;
-  border: 1px solid #985F54;
+  color: $white;
+  border: 1px solid $dark-red;
   background: #985F54;
   padding: 8px 24px;
   border-radius: 50px;
@@ -31,7 +31,7 @@
   color: #F1F7ED;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #15616D;
+  background: $blue;
   transition: background 0.3s ease;
 }
 

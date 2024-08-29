@@ -1,0 +1,6 @@
+<%= simple_form_for car do |f| %>
+  <%= f.input :initial_price, car_placeholder: "novo preço" %>
+  <%= f.input :km, car_placeholder: "Km rodados" %>
+  <%= f.input :photo, car_placeholder: "Nova foto" %>
+  <%= f.submit "Atualizar" %>
+<% end %>

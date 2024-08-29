@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[show delete edit]
+  before_action :set_car, only: %i[show delete edit update]
   def index
     @cars = Car.all
   end
@@ -22,12 +22,11 @@ class CarsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-    raise
-
+    @car.update(car_params)
+    redirect_to profiles_path
   end
 
   def delete

@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container p-3">
   <% if @car.photo.attached? %>
     <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
   <% else %>
     <%= image_tag "car_placeholder.jpg" %>
   <% end %>
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-8 mr-2">
       <div class="card pt-2">
         <div class="card-body">
@@ -17,8 +17,8 @@
       </div>
     </div>
     <div class="col-4 ml-1 text-center">
-      <div class="card-body">
-        <h3 class="card-title">Orfeta</h3>
+      <div class="card-body p-4">
+        <h3 class="card-title">Oferta</h3>
         <h5 class="card-text">Preço pedido: <%= @car.initial_price %>,00$</h5>
         <div class="card-footer text-center">
           <%= link_to "De uma oferta neste carro", new_car_deal_path(@car), class: "btn btn-gradient" %>

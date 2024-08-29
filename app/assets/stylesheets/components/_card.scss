@@ -1,3 +1,17 @@
 .card-banner {
   object-fit: contain;
 }
+
+.card-hd {
+  background-color: $mid-gray;
+  opacity: 0.6;
+  color: $gray;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.card-body {
+  background-color: $white;
+}
+

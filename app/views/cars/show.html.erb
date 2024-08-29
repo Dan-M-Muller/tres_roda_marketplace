@@ -1,18 +1,29 @@
-<div class="card pt-2">
+<div class="container">
   <% if @car.photo.attached? %>
     <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
   <% else %>
     <%= image_tag "car_placeholder.jpg" %>
   <% end %>
-  <hr>
-  <div class="card-body">
-    <h3 class="card-title text-center"><%= @car.model %>, <%= @car.brand %></h3>
-    <h5 class="card-text">Preço pedido: <%= @car.initial_price %>,00$</h5>
-    <p class="card-text">Vendedor: <%= @car.user.first_name %> <%= @car.user.last_name %></p>
-    <p class="card-text">Kilometragem: <%= @car.km %></p>
-    <p class="card-text">Ano: <%= @car.year %></p>
-    <div class="card-footer text-center">
-      <%= link_to "Compre este carro", new_car_deal_path(@car), class: "btn btn-gradient" %>
+  <div class="row">
+    <div class="col-8 mr-2">
+      <div class="card pt-2">
+        <div class="card-body">
+          <h3 class="card-title text-center"><%= @car.model %>, <%= @car.brand %></h3>
+          <hr>
+          <p class="card-text">Vendedor: <%= @car.user.first_name %> <%= @car.user.last_name %></p>
+          <p class="card-text">Kilometragem: <%= @car.km %></p>
+          <p class="card-text">Ano: <%= @car.year %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 ml-1 text-center">
+      <div class="card-body">
+        <h3 class="card-title">Orfeta</h3>
+        <h5 class="card-text">Preço pedido: <%= @car.initial_price %>,00$</h5>
+        <div class="card-footer text-center">
+          <%= link_to "De uma oferta neste carro", new_car_deal_path(@car), class: "btn btn-gradient" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

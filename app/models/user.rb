@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :deals, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :cars, dependent: :destroy
   has_many :cars, through: :deals
   has_one :profile

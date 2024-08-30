@@ -1,13 +1,13 @@
 <% dealing_car = @deal.car %>
-<h1>Minha oferta para <%= dealing_car.model %></h1>
+<h1 class="hd-car-dark text-center">Minha oferta para <%= dealing_car.model %></h1>
 
-<div class="card">
+<div class="card card-bls">
   <% if @deal.car.photo.attached? %>
-    <%= cl_image_tag dealing_car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
+    <%= cl_image_tag dealing_car.photo.key, crop: :fill, class: "img-show mb-4" %>
   <% else %>
-    <%= image_tag "car_placeholder.jpg" %>
+    <%= image_tag "car_placeholder.jpg", class: "img-show mb-4"%>
   <% end %>
-  <div class="card-body">
+  <div class="card-body mb-4">
     <div class="card-footer text-center">
       <% if @deal.accepted? %>
         <%= @deal.seller.first_name %> Aceitou sua proposta! Parabéns!

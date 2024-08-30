@@ -1,6 +1,7 @@
 class DealsController < ApplicationController
 
   def index
+    @review = Review.new()
     @seller_deals = Deal.by_seller(current_user)
   end
 

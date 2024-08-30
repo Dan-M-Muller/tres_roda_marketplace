@@ -20,3 +20,13 @@
     <%= link_to "Voltar", my_deals_path, class: "btn btn-dark" %>
   </div>
 </div>
+
+  <div class="container mb-5">
+    <% @deal.car.reviews.where(user: [@deal.user, @deal.car.user]).each do |r|%>
+      <div class="card-body">
+        <h3> <%= r.user.first_name %> <%= r.user.last_name %>, perguntou </h3>
+          <%= r.post %>
+          <hr>
+      </div>
+    <% end %>
+  </div>

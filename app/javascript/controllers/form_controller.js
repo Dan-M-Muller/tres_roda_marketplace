@@ -10,12 +10,12 @@ export default class extends Controller {
 
   toggle(e) {
     this.carFormTarget.classList.toggle("d-none");
-    if (e.currentTarget.classList.contains("btn-ghost")) {
-      e.currentTarget.classList.remove("btn-ghost");
-      e.currentTarget.classList.add("btn-ghost-fill");
-    } else {
-      e.currentTarget.classList.add("btn-ghost");
+    if (e.currentTarget.classList.contains("btn-ghost-fill")) {
       e.currentTarget.classList.remove("btn-ghost-fill");
+      e.currentTarget.classList.add("btn-ghost");
+    } else {
+      e.currentTarget.classList.add("btn-ghost-fill");
+      e.currentTarget.classList.remove("btn-ghost");
     }
   }
 }

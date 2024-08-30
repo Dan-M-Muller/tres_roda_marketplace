@@ -16,6 +16,9 @@
           <p class="card-text">Kilometragem: <%= @car.km %></p>
           <p class="card-text">Ano: <%= @car.year %></p>
         </div>
+        <div class="card card-body mt-5">
+          <%= render "reviews/form", review: @review, car: @car %>
+        </div>
       </div>
     </div>
     <div class="col-4 text-center">
@@ -30,6 +33,14 @@
   </div>
 </div>
 <br>
+<div class="container mb-5">
+  <% @car.reviews.each do |r|%>
+   <div class="card-body">
+    <h3> <%= r.user.first_name %> <%= r.user.last_name %>, perguntou </h3>
+      <%= r.post %>
+   </div>
+  <% end %>
+</div>
 <div class="px-5 pb-5">
   <%= link_to "Voltar", cars_path, class: "btn btn-dark" %>
 </div>

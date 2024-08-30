@@ -5,6 +5,10 @@ puts "destruindo deals"
 Deal.destroy_all
 puts "destruiu deals"
 
+puts "destruindo reviews"
+Review.destroy_all
+puts "destruiu reviews"
+
 puts "Destruindo carros"
 Car.destroy_all
 puts "Destruiu carro"

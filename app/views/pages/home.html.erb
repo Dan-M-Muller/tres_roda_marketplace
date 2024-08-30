@@ -36,7 +36,7 @@
                 Modelo: <%=c.model%> // Ano: <%= c.year %>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Fabricante: <%= c.brand %></h5>
+                <h5 class="card-title">Fabricante: <strong-r><%= c.brand %></strong-r></h5>
                 <p class="card-text">Km rodados: <%= c.km %></p>
                 <%= link_to "Veja mais informações", car_path(c), class: "btn btn-flat" %>
               </div>

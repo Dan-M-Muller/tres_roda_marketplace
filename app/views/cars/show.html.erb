@@ -34,7 +34,7 @@
 </div>
 <br>
 <div class="container mb-5">
-  <% @car.reviews.each do |r|%>
+  <% @car.reviews.where.not(user: [@car.deals.map(&:user), @car.user]).each do |r|%>
    <div class="card-body">
     <h3> <%= r.user.first_name %> <%= r.user.last_name %>, perguntou </h3>
       <%= r.post %>

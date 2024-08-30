@@ -1,12 +1,12 @@
 <div class="container p-3">
   <% if @car.photo.attached? %>
-    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
+    <%= cl_image_tag @car.photo.key, crop: :fill, class: "img-show" %>
   <% else %>
     <%= image_tag "car_placeholder.jpg" %>
   <% end %>
   <div class="row mt-3">
     <div class="col-8 mr-2">
-      <div class="card pt-2">
+      <div class="card card-bls pt-2">
         <div class="card-body">
           <h3 class="card-title text-center"><strong><%= @car.model %></strong>, <strong-r><%= @car.brand %></strong-r></h3>
           <hr>

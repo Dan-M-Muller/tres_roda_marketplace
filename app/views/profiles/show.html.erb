@@ -8,10 +8,10 @@
 <div class="tab-content" id="nav-tabContent">
     <%# tab de meus carros %>
   <div class="tab-pane fade show active" id="nav-cars" role="tabpanel" aria-labelledby="nav-cars-tab">
-    <div class="container m-5">
-      <div class="card">
+    <div class="container m-5 ">
+      <div class="card card-bls">
         <% @cars.each do |car| %>
-          <div class="card mb-3" style="max-width: 1200px;">
+          <div class="card card-bls mb-3" style="max-width: 1200px;">
             <div class="row g-0">
               <div class="col-md-4">
                 <% if car.photo.attached? %>
@@ -30,7 +30,7 @@
                   <button type="button" class="btn btn-ghost-fill" data-action="click->form#toggle">
                     Editar
                   </button>
-                  <div class="card mt-4 d-none form-bg" data-form-target="carForm">
+                  <div class="card card-bls mt-4 d-none form-bg" data-form-target="carForm">
                     <%= render "car_edit_form", car: car %>
                   </div>
                 </div>

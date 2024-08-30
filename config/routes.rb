@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :deals, only: %i[new create]
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: %i[create]
   end
 
   resources :deals, only: %i[index show edit update] do

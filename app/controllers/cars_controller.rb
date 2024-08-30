@@ -2,6 +2,9 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[show delete edit update]
   def index
     @cars = Car.all
+    if params[:query].present?
+      @cars = Car.search_cars(params[:query])
+    end
   end
 
   def show

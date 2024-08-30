@@ -7,6 +7,7 @@ class DealsController < ApplicationController
   def my
     @buyer_deals = current_user.deals
   end
+
   def new
     @car = Car.find(params[:car_id])
     @deal = Deal.new()
@@ -21,7 +22,7 @@ class DealsController < ApplicationController
     @deal.user = @buyer
     @deal.car = @car
     @deal.save
-    redirect_to deal_path(@deal)
+    redirect_to deals_path(@deal)
   end
 
   def show

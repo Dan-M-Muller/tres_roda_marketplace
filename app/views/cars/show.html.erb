@@ -16,6 +16,9 @@
           <p class="card-text">Kilometragem: <%= @car.km %></p>
           <p class="card-text">Ano: <%= @car.year %></p>
         </div>
+        <div>
+          <%= render "review_form", review: @review %>
+        </div>
       </div>
     </div>
     <div class="col-4 text-center">

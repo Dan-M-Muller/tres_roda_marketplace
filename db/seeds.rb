@@ -28,11 +28,12 @@ User.create!(email: "albertin_tilim@emailreal.confia", password: '123456', first
 
 puts "Criou todos usuarios"
 
-car_photos = [File.open("db/seed_cars/ambu.jpg"), File.open("db/seed_cars/belair_2.jpg"), File.open("db/seed_cars/mx5.jpg"),
-File.open("db/seed_cars/city-x.jpg"), File.open("db/seed_cars/equator.jpg"), File.open("db/seed_cars/ferrari.jpg"),
-File.open("db/seed_cars/fusca.jpg"), File.open("db/seed_cars/hello.jpg"), File.open("db/seed_cars/kart.jpg"),
-File.open("db/seed_cars/komb.jpg"), File.open("db/seed_cars/kuro.jpg"), File.open("db/seed_cars/limu.jpg"),
-File.open("db/seed_cars/lotus.jpg"), File.open("db/seed_cars/porche.jpg"), File.open("db/seed_cars/taxi.jpg")
+car_photos = [File.open("db/seed_cars/belair_2.jpg"), File.open("db/seed_cars/mx5.jpg"),
+File.open("db/seed_cars/city-x.jpg"),File.open("db/seed_cars/ferrari.jpg"),
+File.open("db/seed_cars/fusca.jpg"), File.open("db/seed_cars/hello.jpg"),File.open("db/seed_cars/komb.jpg"),
+File.open("db/seed_cars/kuro.jpg"), File.open("db/seed_cars/limu.jpg"),File.open("db/seed_cars/porche.jpg"),
+File.open("db/seed_cars/taxi.jpg"), File.open("db/seed_cars/nissan-370Z.jpg"), File.open("db/seed_cars/uno.jpg"),
+File.open("db/seed_cars/cybertruck.jpg"), File.open("db/seed_cars/menz.jpg"), File.open("db/seed_cars/porche2.jpg")
 ]
 indx = 0
 

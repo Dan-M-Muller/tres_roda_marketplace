@@ -52,6 +52,7 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "pg_search"
+gem 'rails-i18n'
 
 gem "cloudinary"
 gem 'faker'

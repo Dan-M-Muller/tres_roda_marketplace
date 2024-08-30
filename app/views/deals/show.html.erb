@@ -1,8 +1,8 @@
+<div class="hd-car-dark text-center">
 <% dealing_car = @deal.car %>
-<div class="container">
   <h1>Minha oferta para <%= dealing_car.model %></h1>
 </div>
-<div class="card">
+<div class="card mt-5">
   <% if @deal.car.photo.attached? %>
     <%= cl_image_tag dealing_car.photo.key, crop: :fill, class: "img-show mb-4" %>
   <% else %>

@@ -1,7 +1,7 @@
 <nav>
   <div class="nav nav-tabs mt-5" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-cars" type="button" role="tab" aria-controls="nav-cars" aria-selected="true">My Cars</button>
-    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+    <button class="nav-link active" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-cars" type="button" role="tab" aria-controls="nav-cars" aria-selected="true">Meus Carros</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Configurações</button>
   </div>
 </nav>
 
@@ -25,9 +25,9 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body" data-controller="form">
-                  <h3 class="card-title mb-3">Modelo: <%= car.model %>, Fabricante: <%= car.brand %></h3>
-                  <h5 class="card-text"><small class="text-muted">Ano: <%= car.year %></small></p>
-                  <h5 class="card-text"><small class="text-muted">Kilometragem: <%= car.km %></small></p>
+                  <h3 class="card-title mb-3">Modelo: <strong-r><%= car.model %></strong-r>, Fabricante: <strong-r><%= car.brand %></strong-r></h3>
+                  <p class="card-text"><small class="text-muted">Ano: <%= car.year %></small></p>
+                  <p class="card-text mb-3"><small class="text-muted">Kilometragem: <%= car.km %></small></p>
                   <h5 class="card-text"><strong-r>Preço pedido: </strong-r> <%= car.initial_price %>,00$</h5>
                   <%# <%= link_to "Editar",  edit_car_path(car), class: "btn btn-ghost" %>
                   <button type="button" class="btn btn-ghost-fill" data-action="click->form#toggle">

@@ -1,6 +1,7 @@
 <h1 class="bg-dark bg-gradient text-white text-center p-2"> Confirmação de preço para <%= @car.brand %> <%= @car.model %>, <%= @car.year %></h1>
-<h3> Converse com <%= @car.user.first_name %>, para chegarem a um acordo</h3>
-<%= link_to "Volte", car_path(@car), class: "btn btn-dark" %>
+<div class="container mt-2">
+  <h3> Converse com <%= @car.user.first_name %>, para chegarem a um acordo</h3>
+</div>
 <hr>
 <div class="container m-3">
   <div class="card">
@@ -11,4 +12,5 @@
       <%= render "buyer_form", deal: @deal %>
     </div>
   </div>
+  <%= link_to "Voltar", car_path(@car), class: "btn btn-dark mt-3" %>
 </div>

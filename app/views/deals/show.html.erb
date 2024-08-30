@@ -1,6 +1,7 @@
 <% dealing_car = @deal.car %>
-<h1>Minha oferta para <%= dealing_car.model %></h1>
-
+<div class="container">
+  <h1>Minha oferta para <%= dealing_car.model %></h1>
+</div>
 <div class="card">
   <% if @deal.car.photo.attached? %>
     <%= cl_image_tag dealing_car.photo.key, height: 300, width: 400, crop: :fill, class: "card-banner card-img-top" %>
@@ -16,6 +17,6 @@
         Sua oferta ainda não foi aceita, espere por <%= @deal.seller.first_name %>
       <% end %>
     </div>
-    <%= link_to "Volte", my_deals_path, class: "btn btn-dark" %>
+    <%= link_to "Voltar", my_deals_path, class: "btn btn-dark" %>
   </div>
 </div>
